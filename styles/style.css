@@ -1,0 +1,160 @@
+body {
+    /* https://stackoverflow.com/questions/20400755/css-body-width-does-not-fill-100-percent */
+    min-width: fit-content;
+    /* font-family:Arial, Helvetica, sans-serif; */
+    /* font import */
+    font-family: DotGothic16, sans-serif;
+    color: midnightblue;
+    background-image: url(../assets/cloudbg.png);
+}
+
+a {
+    text-decoration: none;
+    color: #7FC6FC;
+}
+
+/* pseudo class 1 & 2 */
+a:hover {
+    color: #b5e9ff;
+}
+
+a:active {
+    color: midnightblue;
+}
+
+p {
+    margin: 20px 10px;
+}
+
+h1, footer a {
+    padding: 15px;
+    border-radius: 25px;
+    background-color: azure;
+}
+
+footer a {
+    width: 243px;
+}
+
+h2 {
+    color: #7FC6FC;
+}
+
+header, footer{
+    display: flex;
+    margin: 20px;
+}
+
+header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    background-color: azure;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+}
+
+/* attribute selector and pseudo elements */
+footer a[href="#"]::before, footer a[href="#"]::after, header h1::before, header h1::after {
+    content: " ˗ˏˋ ★ ˊˎ˗ ";
+    color: #7FC6FC;
+}
+
+footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: .5fr 2.5fr;
+    gap: 40px;
+    margin: 20px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 30px;
+} 
+
+
+.project, #contact, .sidebar {
+    text-align: center;
+}
+
+.project, .sidebar {
+    border-radius: 25px;
+    background-color: azure;
+    padding: 15px;
+}
+
+.project span {
+    background-color: #daf4ff;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 25px;
+}
+
+/* pseudo class 3 */
+.project:first-child, .project:last-child {
+    background-color: #daf4ff;
+}
+
+.project:first-child span, .project:last-child span {
+    background-color: azure;
+}
+
+.sidebar {
+    max-block-size: 920px;
+}
+
+/* combinator */
+.sidebar > img {
+    width: 200px;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.project img {
+    width: 500px;
+    align-items: center;
+    border-radius: 25px;
+}
+
+/* https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp */
+/* tablets */
+@media screen and (max-width: 1024px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* phones */
+@media screen and (max-width: 600px) {
+    .wrapper, .projects {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+}
